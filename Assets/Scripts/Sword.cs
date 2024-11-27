@@ -14,18 +14,18 @@ public class Sword : MonoBehaviour
 
     private GameObject slashAnim;
 
-    private void Awake() {
+    private void Awake() { //Get everthing ready
         playerController = GetComponentInParent<PlayerController>();
         activeWeapon = GetComponentInParent<ActiveWeapon>();
         myAnimator = GetComponent<Animator>();
         playerControls = new PlayerControls();
     }
 
-    private void OnEnable() {
+    private void OnEnable() { //Give persmissions to the player
         playerControls.Enable();
     }
 
-    void Start()
+    void Start()// Did they press the thing?
     {
         playerControls.Combat.Attack.started += _ => Attack();
     }
@@ -34,14 +34,14 @@ public class Sword : MonoBehaviour
         MouseFollowWithOffset();
     }
 
-    private void Attack() {
+    private void Attack() { //They did the thing!
         myAnimator.SetTrigger("Attack");
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
     }
 
-    public void SwingUpFlipAnim() {
+    public void SwingUpFlipAnim() { //Change to swing up
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
 
         if (playerController.FacingLeft) { 
@@ -49,7 +49,7 @@ public class Sword : MonoBehaviour
         }
     }
 
-    public void SwingDownFlipAnim() {
+    public void SwingDownFlipAnim() { //Change to swing down
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         if (playerController.FacingLeft)
@@ -58,7 +58,7 @@ public class Sword : MonoBehaviour
         }
     }
 
-    private void MouseFollowWithOffset() {
+    private void MouseFollowWithOffset() { //Swing the right way!
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(playerController.transform.position);
 

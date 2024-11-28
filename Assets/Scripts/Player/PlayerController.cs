@@ -1,3 +1,6 @@
+//---------------------- NOT THE AUTO GENERATED FILE FORM UNITY -------------------------//
+//----------------------           This one is mine!            -------------------------//
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +11,21 @@ public class PlayerController : MonoBehaviour
 //---Imports---
 //Controls/physics
     [SerializeField] private float moveSpeed = 1f;
-    public static PlayerController Instance;
+    [SerializeField] private float dashSpeed = 4f;
+    [SerializeField] private TrailRenderer myTrailRenderer;
 
+    public static PlayerController Instance;
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
+
 //Graphics
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
-//Player facing direction
-    
+//Player Controls
+
     private bool facingLeft = false;
+    private bool isDashing = false;
 
 //---Work being done!---
     private void Awake() { //Go!
@@ -27,6 +34,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start() {
+        playerControls.Combat.Dash.performed += _ => Dash();
     }
 
     private void OnEnable() { // Enable input
@@ -65,4 +76,22 @@ public class PlayerController : MonoBehaviour
             FacingLeft = false;
         }
     }
+
+    private void Dash() { // Is as described!
+        if (!isDashing) {
+            isDashing = true;
+            moveSpeed *= dashSpeed;
+            myTrailRenderer.emitting = true;
+            StartCoroutine(EndDashRoutine());
+        }
+    }
+
+    private IEnumerator EndDashRoutine() { // Stop doing the thing!
+        float dashTime = .2f;
+        float dashCD = .25f;
+        yield return new WaitForSeconds(dashTime);
+        myTrailRenderer.emitting = false;
+        yield return new WaitForSeconds(dashCD);
+        isDashing = false;
+    } 
 }

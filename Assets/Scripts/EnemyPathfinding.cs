@@ -5,17 +5,20 @@ using UnityEngine;
 public class EnemyPathfinding : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-
-// The enemey
     private Rigidbody2D rb;
-// Where they are going
     private Vector2 moveDir;
+    private Knockback knockback;
 
     private void Awake() {
+        knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate() {
+        if (knockback.gettingKnockedBack) { 
+            return; 
+            }
+            
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
 

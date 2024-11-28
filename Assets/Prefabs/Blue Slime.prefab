@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 9070052566947196057}
   - component: {fileID: 546183966488288964}
   - component: {fileID: 688214490386169001}
+  - component: {fileID: 7198148133883267159}
+  - component: {fileID: 5283922560439590061}
   m_Layer: 0
   m_Name: Blue Slime
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8667406123618490481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.24, y: -2.05, z: 0}
+  m_LocalPosition: {x: 1.228, y: -2.061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,9 +128,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.038749546, y: -0.034695}
-  m_Size: {x: 0.90766484, y: 0.90766484}
-  m_Direction: 0
+  m_Offset: {x: 0.012618066, y: -0.0018080192}
+  m_Size: {x: 0.9354199, y: 0.8003594}
+  m_Direction: 1
 --- !u!50 &415508346575468044
 Rigidbody2D:
   serializedVersion: 5
@@ -203,3 +205,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7198148133883267159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667406123618490481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21fbb5d171a0ca4994b895826f2368d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+--- !u!114 &5283922560439590061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667406123618490481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedf95a5b196c3045951f6ef7a29852a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.1

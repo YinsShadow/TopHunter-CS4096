@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class SlashAnim : MonoBehaviour
 {
-    public void DestroySelf() {
+    private ParticleSystem ps;
+
+    private void Awake() {
+        ps = GetComponent<ParticleSystem>();
+    }
+
+    private void Update() {
+        if (ps && !ps.IsAlive()) { //Clean up  particles after death!
+            DestroySelf();
+        }
+    }
+    
+    public void DestroySelf() { //Delete thyself
         Destroy(gameObject);
     }
 }

@@ -1,11 +1,12 @@
-//---Control the Robots!---
-
+//----------------------Control the small Robots!----------------------//
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] private float roamChangeDirFloat = 2f;
+
     private enum State {
         Roaming
     }
@@ -20,19 +21,19 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void Start() {
-        StartCoroutine(RoamingRoutine()); //Shuffle about!
+        StartCoroutine(RoamingRoutine()); // Go!
     }
 
-    private IEnumerator RoamingRoutine() { //Move it or lose it!
+    private IEnumerator RoamingRoutine() { // Shuffle about!
         while (state == State.Roaming)
         {
             Vector2 roamPosition = GetRoamingPosition();
             enemyPathfinding.MoveTo(roamPosition);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(roamChangeDirFloat);
         }
     }
 
-    private Vector2 GetRoamingPosition() { //Where ya goin?
+    private Vector2 GetRoamingPosition() { //Where ya gonna go?
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 }

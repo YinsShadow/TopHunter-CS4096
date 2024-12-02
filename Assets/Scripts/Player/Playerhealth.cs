@@ -7,7 +7,7 @@ public class Playerhealth : MonoBehaviour
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
-    private int currentHealth;
+    public int currentHealth;
     private bool canTakeDamage = true;
     private Knockback knockback;
     private Flash flash;
@@ -31,7 +31,7 @@ public class Playerhealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damageAmount) {
+    public void TakeDamage(int damageAmount) {
         canTakeDamage = false;
         currentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());

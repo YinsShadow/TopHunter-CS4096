@@ -1707,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &298568306
 Transform:
   m_ObjectHideFlags: 0
@@ -2346,6 +2346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 961914941292872313, guid: 249b84b55be4cea48b2e65a9ee8b7ad5, type: 3}
+      propertyPath: dashSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1275099462099975136, guid: 249b84b55be4cea48b2e65a9ee8b7ad5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -13353,8 +13357,7 @@ GameObject:
   - component: {fileID: 4578904377523263513}
   - component: {fileID: 1529886044976909539}
   - component: {fileID: 5610673395230447940}
-  - component: {fileID: 6627912984084467341}
-  - component: {fileID: 6627912984084467339}
+  - component: {fileID: 6627912984084467342}
   m_Layer: 0
   m_Name: King Slime
   m_TagString: Untagged
@@ -13853,20 +13856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionName: NEntry
---- !u!114 &6627912984084467339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605247862704097343}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3fc683cbb7c8d45847b78a323bb8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
---- !u!114 &6627912984084467341
+--- !u!114 &6627912984084467342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13875,7 +13865,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2605247862704097343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5ad58c462fc7f48ab6268449ceeb1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 546bc9e8becf9894a95e229c9fc87e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2

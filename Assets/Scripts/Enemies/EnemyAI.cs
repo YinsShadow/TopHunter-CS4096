@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void Start() {
-        StartCoroutine(RoamingRoutine()); // Go!
+        //StartCoroutine(RoamingRoutine()); // Go!
     }
 
     private IEnumerator RoamingRoutine() { // Shuffle about!

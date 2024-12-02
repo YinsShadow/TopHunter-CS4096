@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3588550504161524972
+--- !u!1 &7799307665402837295
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 40148817523295757}
-  - component: {fileID: 6848278751761449452}
+  - component: {fileID: 2554082750832891931}
+  - component: {fileID: 6578094270841997284}
   m_Layer: 0
   m_Name: AreaEntrance
   m_TagString: Untagged
@@ -17,34 +17,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &40148817523295757
+--- !u!4 &2554082750832891931
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588550504161524972}
+  m_GameObject: {fileID: 7799307665402837295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6544734547865358457}
+  m_Father: {fileID: 8320235338317957464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6848278751761449452
+--- !u!114 &6578094270841997284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588550504161524972}
+  m_GameObject: {fileID: 7799307665402837295}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbf468868b61c7740b21c518666ce940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7620161527374296340
+  transitionName: EEntry
+--- !u!1 &7808745296064440756
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,9 +53,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6544734547865358457}
-  - component: {fileID: 4112374354415653388}
-  - component: {fileID: 2612632708266057074}
+  - component: {fileID: 8320235338317957464}
+  - component: {fileID: 3582689740242266908}
+  - component: {fileID: 8350611981784170679}
   m_Layer: 0
   m_Name: AreaExit
   m_TagString: Untagged
@@ -62,29 +63,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6544734547865358457
+--- !u!4 &8320235338317957464
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7620161527374296340}
+  m_GameObject: {fileID: 7808745296064440756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.06, y: 9.85, z: -0.039624393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 40148817523295757}
+  - {fileID: 2554082750832891931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4112374354415653388
+--- !u!61 &3582689740242266908
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7620161527374296340}
+  m_GameObject: {fileID: 7808745296064440756}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -108,7 +109,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -124,15 +125,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3272915, y: 1.1690702}
   m_EdgeRadius: 0
---- !u!114 &2612632708266057074
+--- !u!114 &8350611981784170679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7620161527374296340}
+  m_GameObject: {fileID: 7808745296064440756}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2134c91231177e24b90c0118ee4ee998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Scene2
+  sceneTransitionName: WEntry

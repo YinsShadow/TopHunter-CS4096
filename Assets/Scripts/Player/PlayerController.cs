@@ -1,6 +1,3 @@
-//---------------------- NOT THE AUTO GENERATED FILE FORM UNITY -------------------------//
-//----------------------           This one is mine!            -------------------------//
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +25,7 @@ public class PlayerController : Singleton<PlayerController>
 
     protected override void Awake() { //Go!
         base.Awake();
+        
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();

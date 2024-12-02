@@ -1,16 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManagement : MonoBehaviour
+public class SceneManagement : Singleton<SceneManagement>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public string SceneTransitionName { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SetTransitionName(string sceneTransitionName) {
+        this.SceneTransitionName = sceneTransitionName;
     }
 }
